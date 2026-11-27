@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">✓</div>
+                <h1>TaskFlow</h1>
+            </div>
+
+            <p class="header-subtitle">
+                Organize your day. Achieve your goals.
+            </p>
+        </header>
+
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <span class="stat-label">Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Active</span>
+                <h2 id="activeTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Completed</span>
+                <h2 id="completedTasks">0</h2>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task -->
+        <section class="task-form-card">
+
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+
+                <div class="form-group">
+                    <label for="taskInput">Task Name</label>
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What do you need to do?"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="priorityInput">Priority</label>
+
+                        <select id="priorityInput">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateInput">Due Date</label>
+
+                        <input
+                            type="date"
+                            id="dateInput"
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" class="add-button">
+                    + Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Task List -->
+        <section class="tasks-section">
+
+            <div class="tasks-header">
+
+                <h2>My Tasks</h2>
+
+                <div class="search-box">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search tasks..."
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- Filters -->
+            <div class="filter-container">
+
+                <button
+                    class="filter-button active"
+                    data-filter="all"
+                >
+                    All
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="active"
+                >
+                    Active
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="completed"
+                >
+                    Completed
+                </button>
+
+            </div>
+
+
+            <!-- Task List -->
+            <div id="taskList" class="task-list"></div>
+
+
+            <!-- Empty Message -->
+            <p id="emptyMessage" class="empty-message">
+                No tasks found. Add your first task!
+            </p>
+
+
+            <!-- Clear Completed -->
+            <div class="task-footer">
+
+                <span id="remainingTasks">
+                    0 tasks remaining
+                </span>
+
+                <button id="clearCompleted" class="clear-button">
+                    Clear Completed
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>TaskFlow © 2026 | Stay productive</p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
